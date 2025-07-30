@@ -15,7 +15,6 @@ This repository is a personal collection of Data Structures and Algorithms probl
 
 ## 🛠️ Languages Used
 - Java
-- Python (optional: or any other language you’re using)
 
 ## ✍️ Features
 - Clean, readable code with inline comments
