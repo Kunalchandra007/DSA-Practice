@@ -14,7 +14,7 @@ public class printallsubsequence {
             System.out.println();
             return;
         }
-
+ 
         // Not pick or do not take condition: current element is not chosen
         printSubsequences(ind + 1, ds, arr, n);
 

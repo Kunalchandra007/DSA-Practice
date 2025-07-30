@@ -23,9 +23,4 @@ This repository is a personal collection of Data Structures and Algorithms probl
 - Organized folder structure
 
 ## 🔐 Note
-This is a private repository intended for personal learning and tracking DSA progress.
-
----
-
-Let me know if you'd like a version customized for your resume or LinkedIn later when you make it public.
-# DSA-Practice
+This is a repository intended for personal learning and tracking DSA progress.
