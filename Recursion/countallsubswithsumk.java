@@ -31,3 +31,4 @@ public static int countSubsets(int ind, int s, int sum, int[] arr, int n) {
         System.out.println("Number of subsets with sum " + sum + " is: " + result);
     }
 }
+ 
