@@ -25,5 +25,36 @@ public class Queueusingarrays {
         rear=rear+1;
         arr[rear]=data;
     }
+    public static int remove(){
+        if(isEmpty()){
+            System.out.println("empty queue");
+            return -1; 
+        }
+        int front=arr[0];
+        for(int i=0;i<rear;i++){
+            arr[i]=arr[i+1];
+        }
+        rear=rear-1;
+        return front;
+    }
+    public static int peek(){
+        if(isEmpty()){
+            System.out.println("empty queue");
+            return -1; 
+        }
+        return arr[0];
+
+    }
+
+}
+public static void main(String[] args) {
+    Queue q=new Queue(5);
+    q.add(2);
+    q.add(5);
+    q.add(7);
+    while(!q.isEmpty()){
+        System.out.println(q.peek());
+        q.remove();
+    }
 }
 }
