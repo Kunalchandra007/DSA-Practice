@@ -3,43 +3,30 @@ package Stack_Queues;
 import java.util.*;
 
 class infixToPrefix {
+  
   static boolean isalpha(char c) {
-    if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
-      return true;
-    }
-    return false;
+    return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
   }
 
   static boolean isdigit(char c) {
-    if (c >= '0' && c <= '9') {
-      return true;
-    }
-    return false;
+    return (c >= '0' && c <= '9');
   }
 
   static boolean isOperator(char c) {
     return (!isalpha(c) && !isdigit(c));
   }
 
-  static int getPriority(char C) {
-    if (C == '-' || C == '+')
-      return 1;
-    else if (C == '*' || C == '/')
-      return 2;
-    else if (C == '^')
-      return 3;
-
+  static int getPriority(char c) {
+    if (c == '-' || c == '+') return 1;
+    else if (c == '*' || c == '/') return 2;
+    else if (c == '^') return 3;
     return 0;
   }
 
-  // Reverse the letters of the word
+  // reverse letters of the word
   static String reverse(char str[], int start, int end) {
-
-    // Temporary variable to store character
     char temp;
     while (start < end) {
-
-      // Swapping the first and last character
       temp = str[start];
       str[start] = str[end];
       str[end] = temp;
@@ -50,54 +37,38 @@ class infixToPrefix {
   }
 
   static String infixToPostfix(char[] infix1) {
-    System.out.println(infix1);
     String infix = '(' + String.valueOf(infix1) + ')';
 
     int l = infix.length();
-    Stack < Character > char_stack = new Stack < > ();
+    Stack<Character> char_stack = new Stack<>();
     String output = "";
 
     for (int i = 0; i < l; i++) {
 
-      // If the scanned character is an
-      // operand, add it to output.
-      if (isalpha(infix.charAt(i)) || isdigit(infix.charAt(i)))
+      if (isalpha(infix.charAt(i)) || isdigit(infix.charAt(i))) {
         output += infix.charAt(i);
-
-      // If the scanned character is an
-      // ‘(‘, push it to the stack.
-      else if (infix.charAt(i) == '(')
+      }
+      else if (infix.charAt(i) == '(') {
         char_stack.add('(');
-
-      // If the scanned character is an
-      // ‘)’, pop and output from the stack
-      // until an ‘(‘ is encountered.
+      }
       else if (infix.charAt(i) == ')') {
         while (char_stack.peek() != '(') {
           output += char_stack.peek();
           char_stack.pop();
         }
-
-        // Remove '(' from the stack
-        char_stack.pop();
+        char_stack.pop(); // remove '('
       }
-
-      // Operator found
-      else {
-        if (isOperator(char_stack.peek())) {
-          while ((getPriority(infix.charAt(i)) <
- getPriority(char_stack.peek())) 
-          ||
-(getPriority(infix.charAt(i)) <=
- getPriority(char_stack.peek()) &&
-            infix.charAt(i) == '^')) {
+      else { // Operator found
+        if (!char_stack.isEmpty() && isOperator(char_stack.peek())) {
+          while (!char_stack.isEmpty() &&
+                 ((getPriority(infix.charAt(i)) < getPriority(char_stack.peek())) ||
+                 (getPriority(infix.charAt(i)) <= getPriority(char_stack.peek()) &&
+                  infix.charAt(i) == '^'))) {
             output += char_stack.peek();
             char_stack.pop();
           }
-
-          // Push current Operator on stack
-          char_stack.add(infix.charAt(i));
         }
+        char_stack.add(infix.charAt(i));
       }
     }
     while (!char_stack.empty()) {
@@ -107,9 +78,6 @@ class infixToPrefix {
   }
 
   static String infixToPrefix(char[] infix) {
-    /*
-     * Reverse String Replace ( with ) and vice versa Get Postfix Reverse Postfix *
-     */
     int l = infix.length;
 
     // Reverse infix
@@ -118,26 +86,24 @@ class infixToPrefix {
 
     // Replace ( with ) and vice versa
     for (int i = 0; i < l; i++) {
-
       if (infix[i] == '(') {
         infix[i] = ')';
-        i++;
       } else if (infix[i] == ')') {
         infix[i] = '(';
-        i++;
       }
     }
 
-    String prefix = infixToPostfix(infix);
+    // Convert to postfix
+    String postfix = infixToPostfix(infix);
 
-    // Reverse postfix
-    prefix = reverse(prefix.toCharArray(), 0, l - 1);
+    // Reverse postfix -> gives prefix
+    String prefix = reverse(postfix.toCharArray(), 0, postfix.length() - 1);
 
     return prefix;
   }
 
   public static void main(String[] args) {
-    String s = ("(p+q)*(c-d)");
+    String s = "(p+q)*(c-d)";
     System.out.println("Infix expression: " + s);
     System.out.print("Prefix expression: ");
     System.out.print(infixToPrefix(s.toCharArray()));
