@@ -1,20 +1,22 @@
-package Stack_Queues;
+package Stack_Queues.Conversion;
 import java.util.*;
-public class prefixtoinfix {
+
+public class postfixtoinfix {
     public static String convert(String exp){
-        Stack<String>st=new Stack<>();
-        for(int i=exp.length()-1;i>=0;i--){
-            char c=exp.charAt(i);
+        Stack<String> st = new Stack<>();
+
+        for(int i=0; i<exp.length(); i++){
+            char c = exp.charAt(i);
 
             if(Character.isLetterOrDigit(c)){
                 st.push(Character.toString(c));
-            }else {
+            } else {
                 if (st.size() < 2) {
-                    throw new IllegalArgumentException("Invalid prefix expression: " + exp);
+                    throw new IllegalArgumentException("Invalid postfix expression: " + exp);
                 }
                 String t1 = st.pop();
                 String t2 = st.pop();
-                String result = "(" + t1 + c + t2 + ")";
+                String result = "(" + t2 + c + t1 + ")";
                 st.push(result);
             }
         }
@@ -22,14 +24,11 @@ public class prefixtoinfix {
             throw new IllegalArgumentException("Invalid postfix expression: " + exp);
         }
         return st.pop();
-
-       
-
     }
+
     public static void main(String[] args) {
-        String prefix = "*+PQ-MN";  
-        System.out.println("Postfix expression: " + prefix);
-        System.out.println("Converted expression: " + convert(prefix));
+        String postfix = "ab*c+";  
+        System.out.println("Postfix expression: " + postfix);
+        System.out.println("Converted expression: " + convert(postfix));
     }
-    
 }

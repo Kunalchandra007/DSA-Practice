@@ -1,4 +1,4 @@
-package Stack_Queues;
+package Stack_Queues.Conversion;
 
 import java.util.Stack;
 
