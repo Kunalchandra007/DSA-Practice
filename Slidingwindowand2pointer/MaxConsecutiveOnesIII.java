@@ -1,4 +1,4 @@
-package Slidingwindowand2pointer;
+
 import java.util.*;
 
 public class MaxConsecutiveOnesIII {

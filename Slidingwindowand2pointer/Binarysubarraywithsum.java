@@ -1,4 +1,4 @@
-package Slidingwindowand2pointer;
+
 
 public class Binarysubarraywithsum {
     public static void main(String[] args) {
