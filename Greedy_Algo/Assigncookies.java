@@ -1,4 +1,4 @@
-package Greedy_Algo;
+
 import java.util.*;
 public class Assigncookies {
     public static int assigncookiii(int[] s,int[] g){
