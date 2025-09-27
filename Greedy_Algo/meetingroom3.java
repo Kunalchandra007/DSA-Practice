@@ -53,7 +53,7 @@ public class meetingroom3 {
 
         // Test Case 1
         int n1 = 2;
-        int[][] meetings1 = {{0, 10}, {1, 5}, {2, 7}, {3, 4}};
+        int[][] meetings1 = {{0, 3}, {1, 5}, {2, 7}, {3, 4}};
         System.out.println("Most booked room: " + obj.mostBooked(n1, meetings1));
 
         // Test Case 2
