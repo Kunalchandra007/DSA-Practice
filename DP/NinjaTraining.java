@@ -1,3 +1,4 @@
+package DP;
 import java.util.*;
 
 public class NinjaTraining {
@@ -40,3 +41,4 @@ public class NinjaTraining {
         System.out.println(ninjaTraining(n, points));  // Output: 210
     }
 }
+//leetcode
