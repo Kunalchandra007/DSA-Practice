@@ -1,4 +1,4 @@
-package BinaryTrees;
+
 public class BalanceBinary {
 
     // Definition for a binary tree node

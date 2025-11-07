@@ -1,4 +1,4 @@
-package BinaryTrees;
+
 public class Buildtree {
     static class Node{
         int data;

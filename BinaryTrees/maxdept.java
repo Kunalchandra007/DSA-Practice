@@ -1,4 +1,4 @@
-package BinaryTrees;
+
 import java.util.*;
 public class maxdept{
      static class Node {
