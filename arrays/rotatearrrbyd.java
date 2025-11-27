@@ -42,7 +42,7 @@ public class rotatearrrbyd{
 
         leftRotate(arr, n, d);
 
-        System.out.println("Array after left rotation:");
+        System.out.println("Array after left rotation is:");
         for (int x : arr) {
             System.out.print(x + " ");
         }
