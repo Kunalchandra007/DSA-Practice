@@ -1,6 +1,7 @@
+import java.util.*;
 public class movezeroestoend {
 
-    public void moveZeroes(int[] nums) {
+    public static void moveZeroes(int[] nums) {
 
         int n = nums.length;
         int j = -1;
@@ -26,6 +27,11 @@ public class movezeroestoend {
                 j++;
             }
         }
+    }
+    public static void main(String[] args) {
+        int arr[]={1,2,0,3,4,5};
+          moveZeroes(arr);
+        System.out.println(Arrays.toString(arr));    
     }
 }
 
