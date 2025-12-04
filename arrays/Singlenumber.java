@@ -11,7 +11,7 @@ public class Singlenumber {
     }
     public static void main(String[] args) {
         int arr[]={1,1,2,3,3,8,8};
-        System.out.println("Singlenumber is "+Singlenumberfind(arr));
+        System.out.println("Singlenumber is: "+Singlenumberfind(arr));
         
     }
     
