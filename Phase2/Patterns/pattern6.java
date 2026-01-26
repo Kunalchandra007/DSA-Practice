@@ -1,3 +1,4 @@
+package phase2.Patterns;
 public class pattern6 {
 // 12345
 

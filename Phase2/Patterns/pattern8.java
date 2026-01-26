@@ -1,3 +1,4 @@
+package phase2.Patterns;
 public class pattern8 {
 
 // *********

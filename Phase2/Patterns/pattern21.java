@@ -1,3 +1,4 @@
+package phase2.Patterns;
 public class pattern21 {
     // Function to print pattern21
     public static void pattern21(int n) {

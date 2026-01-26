@@ -1,4 +1,4 @@
-package Phase2.Basicmaths;
+package phase2.Basicmaths;
 public class Countdigitsofanumber {
     public static int countDigit(int n) {
         // Edge case
