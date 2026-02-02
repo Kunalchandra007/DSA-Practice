@@ -23,13 +23,10 @@ public class pattern17 {
             System.out.println();
         }
     }
-
-class Main {
     public static void main(String[] args) {
         int N = 5;
         pattern17(N);
     }
-}
 }
 
     

@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile Java",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "javac \"${file}\""
+      ],
+      "problemMatcher": "$javac",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Run Java with Input/Output",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "java -cp \"${fileDirname}\" ${fileBasenameNoExtension} < \"C:\\DSA\\input.txt\" > \"C:\\DSA\\output.txt\""
+      ],
+      "dependsOn": "Compile Java",
+      "presentation": {
+        "reveal": "always"
+      }
+    }
+  ]
+}
